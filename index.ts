@@ -15,6 +15,18 @@ appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
   ...(falseCondition && { cats: "meow" }),
 };
 
+
+
+const trueCondition = true;
+const falseCondition = false;
+
+const arr = [
+  ...(trueCondition ? ["dog"] : []),
+  ...(falseCondition ? ["cat"] : [])
+];
+
+// ['dog']
+
  */
 const d1 = {
   event: 'event',
@@ -27,9 +39,10 @@ const d2 = {
 const car = (data) => {
   return {
     ...(data?.event ? { event: data.event } : { event: 'defaultEvent' }),
-    ...(data?.css ? { css: data.css } : { css: 'defaultCSS' }),
+    ...(data?.css ? { css: data.css } : { css: 'defaultCSS' }), ////if there is no css object add default object
   };
 };
 
 console.log(JSON.stringify(car(d1)));
+//if there is no css object add default object
 console.log(JSON.stringify(car(d2)));
